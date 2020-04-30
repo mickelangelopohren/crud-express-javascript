@@ -8,3 +8,5 @@ router.get(
     res.send('CRUD Api');
   },
 );
+
+module.exports = router;
