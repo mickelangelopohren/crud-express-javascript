@@ -1,0 +1,28 @@
+{
+  "name": "crud_express_javascript",
+  "version": "1.0.0",
+  "description": "\"CRUD\" with the purpose of studying javascript and Express framework ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mickelangelopohren/crud_express_javascript.git"
+  },
+  "keywords": [
+    "express",
+    "crud",
+    "javascript"
+  ],
+  "author": "Mickelangelo Pohren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickelangelopohren/crud_express_javascript/issues"
+  },
+  "homepage": "https://github.com/mickelangelopohren/crud_express_javascript#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
