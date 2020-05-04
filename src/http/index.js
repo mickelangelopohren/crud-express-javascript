@@ -1,12 +1,12 @@
 const express = require('express');
 
 /* Routes */
-const eventRoute = require('./routes/eventRoute');
+const eventsRoute = require('./routes/eventsRoute');
 
 /* Express initialization */
 const app = express();
 
 /* Instatiate routes */
-app.use('/event', eventRoute);
+app.use('/events', eventsRoute);
 
 module.exports = app;
