@@ -1,12 +1,15 @@
 const { init } = require('@somosphi/logger');
 
 const {
+  AxiosLogger,
+  ExpressLogger,
   Logger,
 } = init({
   PROJECT_NAME: 'crud_express_javascript',
-  OMIT_ROUTES: ['/status', '/info'],
 });
 
 module.exports = {
+  axiosLogger: AxiosLogger,
+  expressLogger: ExpressLogger,
   logger: Logger,
 };
