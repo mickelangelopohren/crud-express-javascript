@@ -1,12 +1,12 @@
 const { eventsModel } = require('../models');
 
-const eventsService = (tmpValue) => {
-  const getAll = async () => {
-    const events = await eventsModel.getAll(tmpValue);
+const eventsService = ({ database }) => {
+  const get = async () => {
+    const events = await eventsModel.get(database);
     return events;
   };
 
-  return { getAll };
+  return { get };
 };
 
 module.exports = eventsService;

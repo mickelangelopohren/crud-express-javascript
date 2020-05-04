@@ -1,5 +1,5 @@
-const getAll = () => 'DB Return'; // (database) => database
-// .table('entities');
-// ;
+const get = (database) => {
+  return database.table('events');
+};
 
-exports.getAll = getAll;
+exports.get = get;
