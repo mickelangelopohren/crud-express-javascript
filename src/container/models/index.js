@@ -1,3 +1,3 @@
-const eventModel = require('./eventModel');
+const eventsModel = require('./eventsModel');
 
-module.exports = { eventModel };
+module.exports = { eventsModel };

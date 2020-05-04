@@ -1,31 +1,31 @@
 const express = require('express');
-const eventController = require('../controllers/eventController');
+const eventsController = require('../controllers/eventsController');
 
 const router = express.Router({ mergeParams: true });
 
 // router.post(
 //   '/',
-//   eventController.create,
+//   eventsController.create,
 // );
 
 router.get(
   '/',
-  eventController.getAll,
+  eventsController.getAll,
 );
 
 // router.put(
 //   '/:id',
-//   eventController.update,
+//   eventsController.update,
 // );
 //
 // router.get(
 //   '/:id',
-//   eventController.findById,
+//   eventsController.findById,
 // );
 //
 // router.delete(
 //   '/:id',
-//   eventController.delete,
+//   eventsController.delete,
 // );
 
 module.exports = router;

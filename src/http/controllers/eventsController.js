@@ -1,8 +1,8 @@
-const { eventService } = require('../../container');
+const { eventsService } = require('../../container');
 
 const getAll = async (req, res, next) => {
   try {
-    const events = await eventService.getAll(req.body);
+    const events = await eventsService.getAll(req.body);
     res.send(events);
   } catch (err) {
     next(err);

@@ -1,8 +1,8 @@
 /** Services */
-const eventService = require('./services/eventService');
+const eventsService = require('./services/eventsService');
 
 const context = 'tmpString';
 
 module.exports = {
-  eventService: eventService(context),
+  eventsService: eventsService(context),
 };
