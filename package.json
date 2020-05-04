@@ -32,9 +32,11 @@
   },
   "dependencies": {
     "@somosphi/logger": "^1.6.0",
+    "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.1",
-    "mysql2": "^2.1.0"
+    "mysql2": "^2.1.0",
+    "request": "^2.88.2"
   }
 }
