@@ -2,11 +2,10 @@ const { expect, request } = require('./helpers');
 
 
 const validateEvent = (event) => {
-  expect(typeof entity).to.be.eql('object');
+  expect(typeof event).to.be.eql('object');
   expect(typeof event.id).to.be.eql('number');
   expect(typeof event.name).to.be.eql('string');
-  expect(typeof event.documentNumber).to.be.eql('string');
-  expect(typeof event.documentType).to.be.eql('string');
+  expect(typeof event.presentation_date).to.be.eql('string');
 };
 
 describe('Http routes', () => {
@@ -18,7 +17,7 @@ describe('Http routes', () => {
     it('should return a new created event', async () => {
       const response = await request.post('/events').send({
         name: 'Evento de Teste',
-        presentationDate: '2020-05-04 14:00:00',
+        presentation_date: '2020-05-04 14:00:00',
       });
 
       expect(response.status).to.be.eql(200);
