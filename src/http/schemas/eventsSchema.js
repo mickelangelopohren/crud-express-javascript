@@ -14,3 +14,13 @@ exports.findById = Joi.object({
     id: Joi.number().positive().required(),
   }),
 });
+
+exports.patch = Joi.object({
+  params: Joi.object({
+    id: Joi.number().positive().required(),
+  }),
+  body: Joi.object({
+    name: Joi.string().trim().optional(),
+    presentation_date: Joi.string().trim().optional(),
+  }).required(),
+});

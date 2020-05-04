@@ -17,20 +17,23 @@ router.get(
   eventsController.get,
 );
 
-// router.put(
-//   '/:id',
-//   eventsController.update,
-// );
-//
+router.patch(
+  '/:id',
+  schemaValidator(eventsSchema.patch),
+  eventsController.patch,
+);
+
 router.get(
   '/:id',
   schemaValidator(eventsSchema.findById),
   eventsController.findById,
 );
 
-// router.delete(
-//   '/:id',
-//   eventsController.delete,
-// );
+router.delete(
+  '/:id',
+  // Same as find, just check the event id
+  schemaValidator(eventsSchema.findById),
+  eventsController.remove,
+);
 
 module.exports = router;

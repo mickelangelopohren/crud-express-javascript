@@ -35,3 +35,31 @@ const findById = async (req, res, next) => {
 };
 
 exports.findById = findById;
+
+const patch = async (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const event = await eventsService.patch(id, req.body);
+    res.send(event);
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.patch = patch;
+
+
+const remove = async (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id, 10);
+    const status = await eventsService.remove(id);
+    if (status !== 1) {
+      // tratar não deleção
+    }
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.remove = remove;

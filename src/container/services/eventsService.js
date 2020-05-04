@@ -17,11 +17,23 @@ const eventsService = ({ database }) => {
     if (!event) {
       console.log('não encontrado #tratar');
     }
-
     return event;
   };
 
-  return { get, post, findById };
+  const patch = async (id, data) => {
+    await eventsModel.patch(database, { id, ...data });
+    const event = await eventsModel.findById(database, id);
+    return event;
+  };
+
+  const remove = async (id) => {
+    const status = await eventsModel.remove(database, id);
+    return status;
+  };
+
+  return {
+    get, post, findById, patch, remove,
+  };
 };
 
 module.exports = eventsService;
