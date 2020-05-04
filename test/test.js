@@ -10,8 +10,6 @@ const validateEvent = (event) => {
 
 describe('Http routes', () => {
   let createdEventId = null;
-  let createdEventName = null;
-  let createdEventPresentationDate = null;
 
   describe('POST /events', () => {
     it('should return a new created event', async () => {
@@ -23,8 +21,6 @@ describe('Http routes', () => {
       expect(response.status).to.be.eql(200);
       validateEvent(response.body);
       createdEventId = response.body.id;
-      createdEventName = response.body.name;
-      createdEventPresentationDate = response.body.presentation_date;
     });
   });
 
@@ -32,7 +28,36 @@ describe('Http routes', () => {
     it('should get all events', async () => {
       const response = await request.get('/events');
       expect(response.status).to.be.eql(200);
-      expect(typeof response.body).to.be.eql('object');
+    });
+  });
+
+  describe('GET /event/{id}', () => {
+    it('should get created event by id', async () => {
+      const response = await request.get(`/events/${createdEventId}`);
+      expect(response.status).to.be.eql(200);
+      validateEvent(response.body);
+    });
+  });
+
+  describe('PATCH /events/{id}', () => {
+    it('should update event with changes', async () => {
+      const changedName = 'Evento de Teste Alterado';
+      const response = await request.patch(`/events/${createdEventId}`).send({
+        name: changedName,
+      });
+
+      expect(response.body.name).to.be.eql(changedName);
+      expect(response.status).to.be.eql(200);
+
+      validateEvent(response.body);
+    });
+  });
+
+  describe('DELETE /event/{id}', () => {
+    it('should delete created event by id', async () => {
+      const response = await request.get(`/events/${createdEventId}`);
+      expect(response.status).to.be.eql(204);
+      // validateEvent(response.body);
     });
   });
 });
