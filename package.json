@@ -4,7 +4,7 @@
   "description": "\"CRUD\" with the purpose of studying javascript and Express framework ",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "dev": "nodemon ./index.js"
   },
   "repository": {
@@ -33,9 +33,11 @@
   "dependencies": {
     "@somosphi/logger": "^1.6.0",
     "axios": "^0.19.2",
+    "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.1",
+    "mocha": "^7.1.2",
     "mysql2": "^2.1.0",
     "request": "^2.88.2"
   }
