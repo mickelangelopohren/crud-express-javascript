@@ -1,6 +1,5 @@
 const knex = require('knex');
 const knexFile = require('../../knexfile');
-// const { logger } = require('../logger');
 const { NODE_ENV } = require('../env');
 
 const eventsService = require('./services/eventsService');
@@ -14,7 +13,7 @@ if (NODE_ENV === 'development') {
         sql = sql.replace('?', binding);
       });
     }
-    // logger.info(sql);
+    console.log(sql);
   });
 }
 

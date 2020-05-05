@@ -4,8 +4,8 @@
   "description": "\"CRUD\" with the purpose of studying javascript and Express framework ",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha",
-    "test-watch": "mocha -w",
+    "test": "export NODE_ENV=test && mocha --recursive",
+    "test:watch": "export NODE_ENV=test && mocha --recursive -w",
     "dev": "nodemon ./index.js"
   },
   "repository": {
@@ -43,6 +43,7 @@
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "knex": "^0.21.1",
+    "morgan": "^1.10.0",
     "mysql2": "^2.1.0",
     "request": "^2.88.2"
   }
