@@ -21,7 +21,6 @@ exports.findById = findById;
 
 
 const patch = (database, { id, ...data }) => {
-  console.log(data);
   return database.table('events').where('id', id).update(data);
 };
 

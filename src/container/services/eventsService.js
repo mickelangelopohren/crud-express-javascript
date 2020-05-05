@@ -28,9 +28,11 @@ const eventsService = ({ database }) => {
 
   const remove = async (id) => {
     const status = await eventsModel.remove(database, id);
+    if (!status === 1) {
+      // lançar error console
+    }
     return status;
   };
-
   return {
     get, post, findById, patch, remove,
   };

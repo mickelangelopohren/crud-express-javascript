@@ -17,7 +17,6 @@ describe('Http routes', () => {
         name: 'Evento de Teste',
         presentation_date: '2020-05-04 14:00:00',
       });
-
       expect(response.status).to.be.eql(200);
       validateEvent(response.body);
       createdEventId = response.body.id;
@@ -55,7 +54,7 @@ describe('Http routes', () => {
 
   describe('DELETE /event/{id}', () => {
     it('should delete created event by id', async () => {
-      const response = await request.get(`/events/${createdEventId}`);
+      const response = await request.delete(`/events/${createdEventId}`);
       expect(response.status).to.be.eql(204);
       // validateEvent(response.body);
     });
