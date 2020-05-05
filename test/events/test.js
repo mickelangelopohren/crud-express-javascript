@@ -1,5 +1,4 @@
-const { expect, request } = require('./helpers');
-
+const { expect, request } = require('../helpers');
 
 const validateEvent = (event) => {
   expect(typeof event).to.be.eql('object');
